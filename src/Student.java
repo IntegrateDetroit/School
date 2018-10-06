@@ -1,10 +1,10 @@
 public class Student {
 
     String name;
-    private StudentRecord studentRecord;
+    private StudentRecordInterface studentRecord;
     private Majors major;
 
-    public Student(String name, StudentRecord studentRecord) {
+    public Student(String name, StudentRecordInterface studentRecord) {
         this.name = name;
         this.studentRecord = studentRecord;
         major = Majors.UNDECIDED;
@@ -27,17 +27,15 @@ public class Student {
         this.major = major;
     }
 
-    public void enroll(Course course){
-        //check to see whether student has taken class previously
-            //through studentrecord - get class list
-            //check class list
-        //if not, enroll
-            //course.enrollStudent
-        //add course to student record
-            //studentRecord, add class to class list
+    public boolean enroll(CourseInterface course){
+        boolean studentHasTakenCourse = studentRecord.hasStudentTaken(course);
+        if (studentHasTakenCourse){
+            return false;
+        }
+        return course.enrollStudent(this);
     }
 
-    public StudentRecord getStudentRecord() {
+    public StudentRecordInterface getStudentRecord() {
         return this.studentRecord;
     }
 }

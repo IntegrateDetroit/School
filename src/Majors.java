@@ -1,4 +1,4 @@
-public enum Majors implements MajorsInterface{
+public enum Majors {
     ELECTRICAL_ENGINEERING("Electrical Engineering", 42),
     UNDECIDED("Undecided", 0), COMPUTER_SCIENCE("Computer Science", 44), HISTORY("History", 30);
 
