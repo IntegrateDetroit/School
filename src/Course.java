@@ -1,30 +1,43 @@
-public class Course implements CourseInterface{
+public class Course implements CourseInterface {
     private String name;
-    Student[] studentList;
+    StudentInterface[] studentList;
     int currentClassSize = 0;
     int capacity;
+    Majors major;
 
-    public Course(String name, int capacity){
+    public Course(String name, int capacity, Majors major) {
         this.name = name;
-        studentList = new Student[capacity];
+        studentList = new StudentInterface[capacity];
         this.capacity = capacity;
+        this.major = major;
 
     }
-    public boolean enrollStudent(Student student) {
-        //TODO enrollStudent needs to return true if the student was added, false otherwise
-        //TODO enrollStudent needs to check that the student being added is not already enrolled
-        if(currentClassSize >= capacity) {
+
+    public boolean enrollStudent(StudentInterface student) {
+
+
+        if (this.major == null || this.major == student.getMajor()) {
+
+            if (currentClassSize >= capacity) {
+                return false;
+            }
+            studentList[currentClassSize++] = student;
             return true;
         }
-        studentList[currentClassSize++] = student;
         return false;
     }
 
-    public Student[] getRegisteredStudents() {
+    public StudentInterface[] getRegisteredStudents() {
         return studentList;
     }
 
     public String getName() {
         return this.name;
     }
+
+    public Majors getMajor() {
+        return this.major;
+    }
+
+
 }

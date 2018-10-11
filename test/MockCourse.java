@@ -2,16 +2,16 @@ public class MockCourse implements CourseInterface {
 
     private boolean enrolled;
     private int enrollStudentCounter;
-    private Student enrolledStudent;
+    private StudentInterface enrolledStudent;
 
     @Override
-    public boolean enrollStudent(Student student) {
+    public boolean enrollStudent(StudentInterface student) {
         enrolledStudent = student;
         enrollStudentCounter++;
         return enrolled;
     }
 
-    public Student getEnrolledStudent() {
+    public StudentInterface getEnrolledStudent() {
         return enrolledStudent;
     }
 
@@ -31,6 +31,10 @@ public class MockCourse implements CourseInterface {
 
     @Override
     public String getName() {
+        return null;
+    }
+
+    public Majors getMajor(){
         return null;
     }
 }

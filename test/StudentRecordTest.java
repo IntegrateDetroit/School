@@ -15,7 +15,7 @@ class StudentRecordTest {
     @Test
     public void studentRecords_addsCoursesToCourseList_whenCourseAdded(){
         StudentRecord studentRecord = new StudentRecord();
-        Course course = new Course(null, 3);
+        Course course = new Course(null, 3, null);
 
         studentRecord.addCourse(course);
 

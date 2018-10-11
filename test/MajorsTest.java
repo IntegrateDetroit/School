@@ -27,4 +27,10 @@ class MajorsTest {
         assertThat(Majors.HISTORY.getName()).isEqualTo("History");
         assertThat(Majors.HISTORY.getCreditsRequired()).isEqualTo(30);
     }
+
+    @Test
+    public void all(){
+        assertThat(Majors.ALL.getName()).isEqualTo("All");
+        assertThat(Majors.ALL.getCreditsRequired()).isEqualTo(0);
+    }
 }

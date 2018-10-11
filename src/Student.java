@@ -1,4 +1,4 @@
-public class Student {
+public class Student implements StudentInterface{
 
     String name;
     private StudentRecordInterface studentRecord;
@@ -39,3 +39,10 @@ public class Student {
         return this.studentRecord;
     }
 }
+
+
+
+
+
+
+

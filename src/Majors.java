@@ -1,6 +1,6 @@
 public enum Majors {
     ELECTRICAL_ENGINEERING("Electrical Engineering", 42),
-    UNDECIDED("Undecided", 0), COMPUTER_SCIENCE("Computer Science", 44), HISTORY("History", 30);
+    UNDECIDED("Undecided", 0), COMPUTER_SCIENCE("Computer Science", 44), HISTORY("History", 30), ALL("All", 0 );
 
     private String name;
     private int creditsRequired;

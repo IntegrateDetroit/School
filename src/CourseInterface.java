@@ -1,8 +1,10 @@
 public interface CourseInterface {
 
-    boolean enrollStudent(Student student);
+    boolean enrollStudent(StudentInterface student);
 
-    Student[] getRegisteredStudents();
+    StudentInterface[] getRegisteredStudents();
 
     String getName();
+
+    Majors getMajor();
 }
